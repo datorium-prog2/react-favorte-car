@@ -1,0 +1,23 @@
+
+.car {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.car__title {
+  font-size: 30px;
+}
+
+.car__image {
+  width: 100%;
+  max-width: 500px;
+}
+
+.car__info {
+  font-size: 18px;
+}
+
+.car__stock {
+  font-size: 20px;
+  color: green;
+}
