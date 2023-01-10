@@ -1,3 +1,7 @@
+# To run the app
+In the same folder where `package.json` fils is located run `npm install` and when everything is installed run `npm start`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
