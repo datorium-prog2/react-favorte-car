@@ -2,6 +2,7 @@ import ColorBox from './components/colorBox/colorBox.js'
 
 import './App.css';
 
+
 const carObject = {
   name: "Audi R8",
   imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/R8_Coupe_V10_performance-1.jpg/2560px-R8_Coupe_V10_performance-1.jpg",
@@ -25,7 +26,6 @@ const carObject = {
       name: 'Phthalo Green',
       colorCode: '#0E2F19'
     },
-
   ]
 }
 
@@ -58,22 +58,15 @@ function App() {
         Available colors
       </h4>
       <div className="car__colors">
-        <ColorBox
-          colorName={carObject.color[0].name}
-          colorCode={carObject.color[0].colorCode} 
-        />
-        <ColorBox
-          colorName={carObject.color[1].name}
-          colorCode={carObject.color[1].colorCode} 
-        />
-        <ColorBox
-         colorName={carObject.color[2].name}
-         colorCode={carObject.color[2].colorCode} 
-        />
-        <ColorBox
-          colorName={carObject.color[3].name}
-          colorCode={carObject.color[3].colorCode} 
-        />
+        {carObject.color.map((color) => {
+
+            return (
+              <ColorBox
+                colorName={color.name}
+                colorCode={color.colorCode} 
+              />
+            )
+          })}
       </div>
     </div>
   );
