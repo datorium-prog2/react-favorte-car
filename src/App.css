@@ -1,7 +1,16 @@
 
 .car {
-  width: 1000px;
+  width: 600px;
   margin: 0 auto;
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.car__star {
+  font-size: 30px;
+  padding-left: 10px;
 }
 
 .car__title {
@@ -20,4 +29,9 @@
 .car__stock {
   font-size: 20px;
   color: green;
+}
+
+.car__not-in-stock {
+  font-size: 20px;
+  color: red;
 }
