@@ -1,17 +1,17 @@
 import './colorBox.css'
 
 
-function ColorBox() {
+function ColorBox({colorName, colorCode}) {
 
     return (
         <div className="color-box">
             <span className="color-box__color-name">
-            Tomato Red
+                {colorName}
             </span>
             <span 
             className="color-box__color-name-box" 
             style={{
-                backgroundColor: '#C34A2C'
+                backgroundColor: colorCode
             }}
             ></span>
         </div>

@@ -58,7 +58,22 @@ function App() {
         Available colors
       </h4>
       <div className="car__colors">
-        <ColorBox />
+        <ColorBox
+          colorName="Tomato Red"
+          colorCode="#C34A2C"
+        />
+        <ColorBox
+          colorName="Panther Black"
+          colorCode="#0f0d0d"
+        />
+        <ColorBox
+          colorName="Nardo Gray"
+          colorCode="#686A6C"
+        />
+        <ColorBox
+          colorName="Phthalo Green"
+          colorCode="#0E2F19"
+        />
       </div>
     </div>
   );
