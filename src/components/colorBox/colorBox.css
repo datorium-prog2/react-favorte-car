@@ -1,0 +1,20 @@
+.color-box {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(202, 199, 199);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.color-box__color-name {
+    font-size: 18px;
+}
+
+.color-box__color-name-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+}

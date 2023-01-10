@@ -1,3 +1,5 @@
+import ColorBox from './components/colorBox/colorBox.js'
+
 import './App.css';
 
 const carObject = {
@@ -56,17 +58,7 @@ function App() {
         Available colors
       </h4>
       <div className="car__colors">
-        <div className="car__color">
-          <span className="car__color-name">
-            Tomato Red
-          </span>
-          <span 
-            className="car__color-name-box" 
-            style={{
-              backgroundColor: '#C34A2C'
-            }}
-          ></span>
-        </div>
+        <ColorBox />
       </div>
     </div>
   );
