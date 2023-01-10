@@ -59,20 +59,20 @@ function App() {
       </h4>
       <div className="car__colors">
         <ColorBox
-          colorName="Tomato Red"
-          colorCode="#C34A2C"
+          colorName={carObject.color[0].name}
+          colorCode={carObject.color[0].colorCode} 
         />
         <ColorBox
-          colorName="Panther Black"
-          colorCode="#0f0d0d"
+          colorName={carObject.color[1].name}
+          colorCode={carObject.color[1].colorCode} 
         />
         <ColorBox
-          colorName="Nardo Gray"
-          colorCode="#686A6C"
+         colorName={carObject.color[2].name}
+         colorCode={carObject.color[2].colorCode} 
         />
         <ColorBox
-          colorName="Phthalo Green"
-          colorCode="#0E2F19"
+          colorName={carObject.color[3].name}
+          colorCode={carObject.color[3].colorCode} 
         />
       </div>
     </div>
