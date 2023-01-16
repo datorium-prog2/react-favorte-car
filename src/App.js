@@ -1,4 +1,5 @@
 import ColorBox from './components/colorBox/colorBox.js'
+import Counter from './components/counter/counter.js'
 
 import './App.css';
 
@@ -33,40 +34,44 @@ function App() {
 
 
   return (
-    <div className="car">
-      <h1 className='car__title'>
-        {carObject.name}
-        {carObject.isLuxus && (
-          <span className='car__star'>
-            ⭐️
-          </span>
-        )}
-      </h1>
-      <img 
-        src={carObject.imageUrl}
-        alt="Audi r8" 
-        className='car__image'
-       />
-      <p className='car__info'>
-        {carObject.description}
-      </p>
-      <span className={carObject.inStock ? "car__stock" : "car__not-in-stock"}>
-        {carObject.inStock ? "In stock" : "Not in stock"}
-      </span>
+    <div>
+      <Counter />
 
-      <h4 className="car__title2">
-        Available colors
-      </h4>
-      <div className="car__colors">
-        {carObject.color.map((color) => {
+      <div className="car">
+        <h1 className='car__title'>
+          {carObject.name}
+          {carObject.isLuxus && (
+            <span className='car__star'>
+              ⭐️
+            </span>
+          )}
+        </h1>
+        <img 
+          src={carObject.imageUrl}
+          alt="Audi r8" 
+          className='car__image'
+        />
+        <p className='car__info'>
+          {carObject.description}
+        </p>
+        <span className={carObject.inStock ? "car__stock" : "car__not-in-stock"}>
+          {carObject.inStock ? "In stock" : "Not in stock"}
+        </span>
 
-            return (
-              <ColorBox
-                colorName={color.name}
-                colorCode={color.colorCode} 
-              />
-            )
-          })}
+        <h4 className="car__title2">
+          Available colors
+        </h4>
+        <div className="car__colors">
+          {carObject.color.map((color) => {
+
+              return (
+                <ColorBox
+                  colorName={color.name}
+                  colorCode={color.colorCode} 
+                />
+              )
+            })}
+        </div>
       </div>
     </div>
   );
