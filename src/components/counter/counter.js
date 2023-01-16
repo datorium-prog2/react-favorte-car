@@ -3,7 +3,12 @@ import './counter.css'
 
 
 const Counter = () => {
-    const [name, setName] = useState("123")
+    // izveidojam state, kurā varēsim veidot dažādus stāvokļus mūsu komonentam
+    // name - state nosaukums
+    // setName - funkcija, kas ļauj mainīt state
+    // ('') - iekavās, sākuma vērtība
+    // IK REIZI KAD STATE TIEK MAINĪTS KOMPONENTS TIEK PĀRZĪMĒTS
+    const [name, setName] = useState("")
     const [count, setCount] = useState(0)
     const [person, setPerson] = useState({
         name: 'Jānis',
@@ -18,7 +23,10 @@ const Counter = () => {
                 type="text" 
                 placeholder='Type your name'
                 value={name}
+                // kad nomaina inputu, mums nāk līdz eventa objekts, 
+                // kurā ir informācija par eventu
                 onChange={(eventObject) => {
+                    // eventa objektam var tikt klāt ievades vērtībai vaur target.value keyiem
                     setName(eventObject.target.value)
                 }}
             />
@@ -26,6 +34,7 @@ const Counter = () => {
             <h1>{count}</h1>
             <button 
                 onClick={() => {
+                    // mainam steitu, kur jaunais satate būs vecais + 1
                     setCount(count + 1)
                 }}
             >
@@ -51,7 +60,8 @@ const Counter = () => {
             <button 
                 onClick={() => {
                     setPerson({
-                    ...person,
+                    // ... saucās spread operators, kurš paņem person objekta vērtības un "ielej" jaunajā objektā
+                        ...person,
                         name: 'John',
                     })
                 }}
