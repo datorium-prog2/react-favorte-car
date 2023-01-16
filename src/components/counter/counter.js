@@ -11,23 +11,6 @@ const Counter = () => {
         likeCats: true
     })
 
-    const someObj = {
-        name: 'John',
-        lastName: 'Doe'
-    }
-
-    const someOtherObject = {
-        ...someObj,
-        lastName: 'Bērziņš',
-        age: 50
-    }
-
-    console.log(someOtherObject);
-
-    // events inputam
-    // state
-    // parādīt state
-
     return (
         <div className='counter'>
             <h2>My name is: {name}</h2>
