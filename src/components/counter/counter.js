@@ -35,7 +35,8 @@ const Counter = () => {
                 type="text" 
                 placeholder='Type your name'
                 value={name}
-                onChange={() => {
+                onChange={(eventObject) => {
+                    console.log(eventObject.target.value)
                     // change state to current value
                 }}
             />
