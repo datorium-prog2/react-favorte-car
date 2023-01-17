@@ -8,7 +8,7 @@ const defaulCarObject = {
   imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/R8_Coupe_V10_performance-1.jpg/2560px-R8_Coupe_V10_performance-1.jpg",
   description: "The Audi R8 is a mid-engine, 2-seater sports car, which uses Audi's trademark quattro permanent all-wheel drive system. It was introduced by the German car manufacturer Audi AG in 2006.",
   inStock: false,
-  isLuxus: false,
+  isLuxus: true,
   color: [
     {
       name: 'Tomato Red',
