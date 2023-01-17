@@ -1,8 +1,7 @@
 import ColorBox from './components/colorBox/colorBox.js'
-import Counter from './components/counter/counter.js'
 
 import './App.css';
-
+import { useState } from 'react';
 
 const carObject = {
   name: "Audi R8",
@@ -31,12 +30,10 @@ const carObject = {
 }
 
 function App() {
-
+  const [inStock, setInStock] = useState(false)
 
   return (
     <div>
-      <Counter />
-
       <div className="car">
         <h1 className='car__title'>
           {carObject.name}
@@ -54,9 +51,16 @@ function App() {
         <p className='car__info'>
           {carObject.description}
         </p>
-        <span className={carObject.inStock ? "car__stock" : "car__not-in-stock"}>
-          {carObject.inStock ? "In stock" : "Not in stock"}
-        </span>
+        <div className='car__stock-wrapper'>
+          <button onClick={() => {
+             setInStock(!inStock)
+          }}>
+            Change
+          </button>
+          <span className={inStock ? "car__stock" : "car__not-in-stock"}>
+            {inStock ? "In stock" : "Not in stock"}
+          </span>
+        </div>
 
         <h4 className="car__title2">
           Available colors
