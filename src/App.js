@@ -81,7 +81,6 @@ function App() {
         </h4>
         <div className="car__colors">
           {carObject.color.map((color) => {
-
               return (
                 <ColorBox
                   colorName={color.name}
@@ -90,6 +89,19 @@ function App() {
               )
             })}
         </div>
+        <from className="car__form">
+          <label className='car__form-label'>
+            Color name
+            <input type="text" placeholder='Tomato red...' />
+          </label>
+          <label className='car__form-label'>
+            Color
+            <input type="color" />
+          </label>
+          <button>
+            Add color
+          </button>
+        </from>
       </div>
     </div>
   );
