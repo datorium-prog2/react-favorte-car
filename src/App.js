@@ -29,13 +29,24 @@ const defaulCarObject = {
   ]
 }
 
+// Mēs gribam lai uzspiežot uz car__title, tiek mainīts mašīnas objekta staitā 
+// isLuxus uz pretējo, attiecīgi lai majaslapā parādās vai paslēpjās zvaigznīte
+
 function App() {
   const [carObject, setCarObject] = useState(defaulCarObject)
 
   return (
     <div>
       <div className="car">
-        <h1 className='car__title'>
+        <h1 
+          className='car__title'
+          onClick={() => {
+            setCarObject({
+             ...carObject,
+             isLuxus: !carObject.isLuxus
+            })
+         }}
+        >
           {carObject.name}
           {carObject.isLuxus && (
             <span className='car__star'>

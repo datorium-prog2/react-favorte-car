@@ -10,12 +10,13 @@
 }
 
 .car__star {
-  font-size: 26px;
+  font-size: 24px;
   padding-left: 10px;
 }
 
 .car__title {
   font-size: 30px;
+  cursor: pointer;
 }
 
 .car__image {
