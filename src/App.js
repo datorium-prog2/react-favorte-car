@@ -34,6 +34,10 @@ const defaulCarObject = {
 
 function App() {
   const [carObject, setCarObject] = useState(defaulCarObject)
+  const [newColorValue, setNewColorValue] = useState({
+    name: '',
+    colorCode: ''
+  })
 
   return (
     <div>
@@ -41,10 +45,13 @@ function App() {
         <h1 
           className='car__title'
           onClick={() => {
-            setCarObject({
-             ...carObject,
-             isLuxus: !carObject.isLuxus
-            })
+            const updatedCarObject = {
+              ...carObject,
+              isLuxus: !carObject.isLuxus
+            }
+
+
+            setCarObject(updatedCarObject)
          }}
         >
           {carObject.name}
@@ -64,10 +71,12 @@ function App() {
         </p>
         <div className='car__stock-wrapper'>
           <button onClick={() => {
-             setCarObject({
+            const updatedCarObject = {
               ...carObject,
               inStock: !carObject.inStock
-             })
+            }
+
+             setCarObject(updatedCarObject)
           }}>
             Change
           </button>
@@ -83,25 +92,71 @@ function App() {
           {carObject.color.map((color) => {
               return (
                 <ColorBox
+                  key={Math.random()}
                   colorName={color.name}
                   colorCode={color.colorCode} 
                 />
               )
             })}
         </div>
-        <from className="car__form">
+        <div className="car__form">
           <label className='car__form-label'>
             Color name
-            <input type="text" placeholder='Tomato red...' />
+            <input 
+              type="text" 
+              placeholder='Tomato red...'
+              value={newColorValue.name}
+              onChange={(eventObject) => {
+                const updatedNewColorValue = {
+                  ...newColorValue,
+                  name: eventObject.target.value
+                }
+    
+
+                setNewColorValue(updatedNewColorValue)
+              }}
+             />
           </label>
           <label className='car__form-label'>
             Color
-            <input type="color" />
+            <input 
+              type="color"
+              value={newColorValue.colorCode}
+              onChange={(eventObject) => {
+                const updatedNewColorValue = {
+                  ...newColorValue,
+                  colorCode: eventObject.target.value
+                }
+
+                setNewColorValue(updatedNewColorValue)
+              }}
+             />
           </label>
-          <button>
+          <button 
+            onClick={() => {
+              const updatedCarObject = {
+                ...carObject,
+                color: [
+                  ...carObject.color,
+                  { 
+                    name: newColorValue.name,
+                    colorCode: newColorValue.colorCode
+                   }
+                ]
+              }
+
+              setCarObject(updatedCarObject)
+
+              setNewColorValue({
+                name: '',
+                colorCode: ''
+              })
+            }}
+            disabled={!newColorValue.name || !newColorValue.colorCode}
+          >
             Add color
           </button>
-        </from>
+        </div>
       </div>
     </div>
   );
